@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const albums = () => {
+const collections = () => {
   return (
     <View>
-      <Text>albums</Text>
+      <Text>collections</Text>
     </View>
   )
 }
 
-export default albums
+export default collections
 
 const styles = StyleSheet.create({})
