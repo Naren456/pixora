@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const albums = () => {
+const pictures = () => {
   return (
     <View>
-      <Text>albums</Text>
+      <Text>pictures</Text>
     </View>
   )
 }
 
-export default albums
+export default pictures
 
 const styles = StyleSheet.create({})
