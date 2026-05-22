@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { FlashList } from "@shopify/flash-list";
 import { usePixoraEngine } from "@/store/useStore";
 import GalleryRow, { ROW_ITEM_SIZE } from "@/components/GalleryRow";
-
+import { useRouter } from 'expo-router';
 export default function PicturesScreen() {
   const { syncState, timeline, startMediaSync } = usePixoraEngine();
 
@@ -12,6 +12,13 @@ export default function PicturesScreen() {
   useEffect(() => {
     startMediaSync();
   }, [startMediaSync]);
+
+  const router = useRouter();
+
+const handlePhotoInspect = (photo: any) => {
+  // Safe dynamic file routing handoff
+  router.push(`/photo/${photo.id}`);
+};
 
   // Satisfy Thread Isolation: Chunk data structures completely out of the render pipeline loop
   const preparedListRows = useMemo(() => {
@@ -39,9 +46,7 @@ export default function PicturesScreen() {
     return dataRows;
   }, [timeline]);
 
-  const handlePhotoInspect = (photo: any) => {
-    console.log("Open photo canvas layout module for instance id:", photo.id);
-  };
+
 
   return (
     <SafeAreaView style={styles.container} edges={["top"]}>

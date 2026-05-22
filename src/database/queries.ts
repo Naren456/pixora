@@ -69,3 +69,29 @@ export async function batchInsertPhotos(photos: any[]): Promise<void> {
     }
   });
 }
+
+export interface PhotoDetailRecord {
+  id: string;
+  uri: string;
+  filename: string;
+  mediaType: string;
+  width: number;
+  height: number;
+  creationTime: number;
+  duration: number;
+  embedding: string | null;
+}
+
+/**
+ * Fetches target photo metadata records directly from the database engine cache.
+ */
+/**
+ * Fetches target photo metadata records directly from the database engine cache.
+ */
+export async function fetchPhotoDetailById(id: string): Promise<PhotoDetailRecord | null> {
+  const db = await getDbConnection();
+  const query = 'SELECT id, uri, filename, mediaType, width, height, creationTime, duration, embedding FROM photos WHERE id = ?;';
+  
+  // CRITICAL: Ensure [id] is explicitly passed as an array to map to the '?' placeholder
+  return await db.getFirstAsync<PhotoDetailRecord>(query, [id]);
+}
