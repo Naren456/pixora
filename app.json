@@ -8,8 +8,7 @@
     "scheme": "pixora",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon",
-      "bundleIdentifier": "com.anonymous.pixora"
+      "icon": "./assets/expo.icon"
     },
     "android": {
       "adaptiveIcon": {
@@ -18,8 +17,7 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.pixora"
+      "predictiveBackGestureEnabled": false
     },
     "web": {
       "output": "static",
@@ -36,9 +34,7 @@
             "imageWidth": 76
           }
         }
-      ],
-      "expo-image",
-      "expo-sqlite"
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
