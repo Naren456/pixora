@@ -41,11 +41,19 @@
           }
         }
       ],
-      "expo-sqlite"
+      "expo-sqlite",
+      "expo-image"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "4418f95c-f029-4dcb-bbcc-35e46daf7ddf"
+      }
+    },
+    "owner": "narendra78"
   }
 }
